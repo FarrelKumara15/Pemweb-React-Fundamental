@@ -11,7 +11,7 @@ npm ci
 npm run dev
 ```
 
-Buka alamat yang ditampilkan Vite, biasanya http://127.0.0.1:5173.
+Buka alamat yang ditampilkan Vite melalui Google Chrome atau Brave, biasanya http://127.0.0.1:5173.
 
 ```bash
 npm run build
@@ -78,10 +78,10 @@ npm test
 
 Playwright menjalankan 10 skenario pada viewport desktop dan emulasi ponsel, total 20 pengujian. Server Vite dijalankan otomatis saat pengujian.
 
-Jika Microsoft Edge sudah terpasang, browser tersebut dapat digunakan tanpa mengunduh Chromium. Contoh PowerShell:
+Jika Google Chrome sudah terpasang, browser tersebut dapat digunakan untuk pengujian otomatis tanpa mengunduh Chromium. Contoh PowerShell:
 
 ```powershell
-$env:PLAYWRIGHT_CHANNEL = 'msedge'
+$env:PLAYWRIGHT_CHANNEL = 'chrome'
 npm test -- --workers=2
 ```
 
