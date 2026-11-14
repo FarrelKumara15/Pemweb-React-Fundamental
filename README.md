@@ -88,9 +88,3 @@ npm test -- --workers=2
 Lihat [skenario dan hasil pengujian](docs/TESTING.md). Screenshot dihasilkan dari aplikasi yang berjalan, bukan mockup.
 
 ![Halaman utama](docs/screenshots/desktop-daftar.png)
-
-## Referensi
-
-- [Materi dasar React](https://react.dev/learn)
-- [Berbagi state antarkomponen](https://react.dev/learn/sharing-state-between-components)
-- [Panduan Vite](https://vite.dev/guide/)
