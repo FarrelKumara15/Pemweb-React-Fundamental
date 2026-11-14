@@ -1,4 +1,4 @@
-import { useRef, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import { initialProducts } from './data/products.js';
 import ProductCard from './components/ProductCard.jsx';
 import SearchBar from './components/SearchBar.jsx';
@@ -12,11 +12,21 @@ export default function App() {
   const [message, setMessage] = useState('');
   const nextId = useRef(6);
   const addButtonRef = useRef(null);
+  const returnFocusRef = useRef(null);
+
+  useEffect(() => {
+    if (!dialog && returnFocusRef.current) {
+      const target = returnFocusRef.current.isConnected ? returnFocusRef.current : addButtonRef.current;
+      target?.focus();
+      returnFocusRef.current = null;
+    }
+  }, [dialog]);
   const filteredProducts = products.filter((product) =>
     product.name.toLocaleLowerCase('id-ID').includes(query.trim().toLocaleLowerCase('id-ID')),
   );
 
   function openDialog(type, product = null) {
+    returnFocusRef.current = document.activeElement;
     setMessage('');
     setDialog({ type, product });
   }
@@ -40,7 +50,7 @@ export default function App() {
     setMessage(`Produk ${dialog.product.name} berhasil dihapus.`);
     setDialog(null);
     // Tombol pemicu ikut terhapus, sehingga fokus kembali ke tombol tambah.
-    addButtonRef.current.focus();
+    returnFocusRef.current = addButtonRef.current;
   }
 
   return (
@@ -83,3 +93,4 @@ export default function App() {
     </main>
   );
 }
+
