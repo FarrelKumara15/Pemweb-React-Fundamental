@@ -13,9 +13,10 @@ export default function DeleteDialog({ product, onConfirm, onClose }) {
         <p className="product-price">{formatPrice(product.price)}</p>
       </div>
       <div className="modal-actions">
-        <button className="button button-outline" type="button" autoFocus onClick={onClose}>Batal</button>
+        <button className="button button-outline" type="button" data-initial-focus onClick={onClose}>Batal</button>
         <button className="button button-danger" type="button" onClick={onConfirm}>Hapus Produk</button>
       </div>
     </Modal>
   );
 }
+

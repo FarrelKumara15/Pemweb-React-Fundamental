@@ -34,7 +34,7 @@ export default function ProductForm({ product, onSave, onClose }) {
       <form onSubmit={handleSubmit} noValidate>
         <div className="form-field">
           <label htmlFor="product-name">Nama Produk</label>
-          <input id="product-name" name="name" value={name} autoFocus required
+          <input id="product-name" name="name" value={name} data-initial-focus required
             placeholder="Contoh: Pulpen" onChange={(event) => setName(event.target.value)}
             aria-invalid={Boolean(errors.name)} aria-describedby={errors.name ? 'name-error' : undefined} />
           {errors.name && <p className="field-error" id="name-error">{errors.name}</p>}
@@ -58,3 +58,4 @@ export default function ProductForm({ product, onSave, onClose }) {
     </Modal>
   );
 }
+
