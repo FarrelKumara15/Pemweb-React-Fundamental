@@ -98,3 +98,29 @@ input[aria-invalid='true'] { border-color: #df202e; }
   .modal-actions .button { font-size: 16px; padding: 11px 15px; }
 }
 @media (prefers-reduced-motion: reduce) { .button { transition: none; } }
+.site-header { background: white; border-bottom: 1px solid var(--border); }
+.site-nav { max-width: 1440px; margin: auto; padding: 20px 48px; display: flex; align-items: center; justify-content: space-between; gap: 20px; }
+.brand { color: #0d1534; font-weight: 750; text-decoration: none; }
+.site-nav nav { display: flex; gap: 12px; }
+.nav-link { color: var(--muted); padding: 10px 16px; text-decoration: none; border-radius: 8px; }
+.nav-link.active { color: var(--blue); background: #edf2ff; font-weight: 700; }
+.route-content:focus { outline: none; }
+.skip-link { position: absolute; left: 16px; top: -80px; padding: 12px; background: white; z-index: 10; }
+.skip-link:focus { top: 8px; }
+.detail-link, .back-link { color: var(--blue); display: inline-flex; gap: 12px; align-items: center; text-decoration: none; font-weight: 600; }
+.detail-link { margin-top: 18px; }
+.back-link { margin-bottom: 30px; }
+.detail-link:hover, .back-link:hover { text-decoration: underline; }
+.eyebrow { color: var(--blue); font-size: 14px; text-transform: uppercase; letter-spacing: 2px; font-weight: 700; }
+.detail-panel { background: white; border: 1px solid var(--border); border-radius: 16px; padding: 32px; max-width: 850px; }
+.detail-panel h2 { margin-top: 0; }
+.detail-fields { display: grid; gap: 24px; }
+.detail-fields dt { color: var(--muted); margin-bottom: 7px; }
+.detail-fields dd { margin: 0; font-size: 22px; font-weight: 650; overflow-wrap: anywhere; }
+.detail-note { border-top: 1px solid var(--border); padding-top: 24px; margin-bottom: 0; color: var(--muted); line-height: 1.6; }
+.not-found { max-width: 620px; margin: 30px auto; text-align: center; }
+.error-code { color: #dbe5ff; font-size: clamp(90px, 18vw, 160px); font-weight: 800; line-height: 1; margin: 0 0 20px; }
+.not-found h2 { font-size: 22px; }
+.not-found p:not(.error-code) { color: var(--muted); line-height: 1.7; margin-bottom: 28px; }
+.not-found .button { display: inline-flex; text-decoration: none; }
+@media (max-width: 640px) { .site-nav { padding: 18px 20px; flex-wrap: wrap; } }
