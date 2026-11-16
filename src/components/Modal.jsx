@@ -31,10 +31,10 @@ export default function Modal({ titleId, descriptionId, onClose, children, class
   }
 
   return (
-    <dialog ref={dialogRef} className={`modal ${className}`} aria-labelledby={titleId}
+    <dialog ref={dialogRef} className={`m-auto max-h-[calc(100dvh-2.5rem)] w-[calc(100%-2rem)] max-w-md overflow-y-auto rounded-2xl border border-slate-200 bg-white p-6 text-ink shadow-2xl backdrop:bg-slate-950/40 backdrop:backdrop-blur-sm sm:p-7 ${className}`} aria-labelledby={titleId}
       aria-describedby={descriptionId} onKeyDown={handleKeyDown}
       onCancel={(event) => { event.preventDefault(); onClose(); }}>
-      <button type="button" className="close-button" onClick={onClose} aria-label="Tutup dialog">×</button>
+      <button type="button" className="absolute top-3 right-3 grid size-10 place-items-center rounded-lg text-3xl leading-none text-slate-500 hover:bg-slate-100" onClick={onClose} aria-label="Tutup dialog">×</button>
       {children}
     </dialog>
   );
