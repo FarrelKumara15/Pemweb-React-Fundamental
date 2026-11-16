@@ -18,6 +18,7 @@ export default function AppLayout() {
           <Link className="brand" to="/products">Manajemen Produk</Link>
           <nav aria-label="Navigasi utama">
             <NavLink to="/products" className={({ isActive }) => isActive ? 'nav-link active' : 'nav-link'}>Produk</NavLink>
+            <NavLink to="/settings" className={({ isActive }) => isActive ? 'nav-link active' : 'nav-link'}>Settings</NavLink>
           </nav>
         </div>
       </header>

@@ -124,3 +124,21 @@ input[aria-invalid='true'] { border-color: #df202e; }
 .not-found p:not(.error-code) { color: var(--muted); line-height: 1.7; margin-bottom: 28px; }
 .not-found .button { display: inline-flex; text-decoration: none; }
 @media (max-width: 640px) { .site-nav { padding: 18px 20px; flex-wrap: wrap; } }
+.product-list { display: grid; grid-template-columns: minmax(0, 1fr); gap: 18px; }
+.product-list .product-card { display: grid; grid-template-columns: 1fr auto; column-gap: 24px; }
+.product-list .card-actions { grid-column: 2; grid-row: 2 / 4; align-self: center; margin: 0; }
+.product-list .detail-link { grid-column: 1; }
+.view-options { border: 0; padding: 0; margin: 0; }
+.view-options legend { font-size: 22px; font-weight: 700; }
+.view-options > p { color: var(--muted); line-height: 1.5; }
+.view-choices { display: grid; gap: 16px; margin: 24px 0; }
+.view-choice { display: flex; align-items: flex-start; gap: 16px; padding: 20px; border: 1px solid var(--border); border-radius: 12px; cursor: pointer; }
+.view-choice:has(input:checked) { background: #eff4ff; border-color: var(--blue); }
+.view-choice input { width: 20px; height: 20px; margin-top: 2px; accent-color: var(--blue); }
+.view-choice strong { display: block; margin-bottom: 7px; }
+.view-choice small { color: var(--muted); font-size: 15px; line-height: 1.5; }
+.settings-return { display: inline-flex; text-decoration: none; margin-top: 24px; }
+@media (max-width: 640px) {
+  .product-list .product-card { display: block; }
+  .product-list .card-actions { margin-top: 20px; }
+}
