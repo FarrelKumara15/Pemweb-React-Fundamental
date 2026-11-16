@@ -4,14 +4,10 @@ Aplikasi React untuk mengelola daftar produk, mengikuti contoh halaman utama dan
 
 ## Menjalankan aplikasi
 
-Gunakan Node.js 22.12+ atau Node.js 24 LTS.
-
 ```bash
 npm ci
 npm run dev
 ```
-
-Buka alamat yang ditampilkan Vite melalui Google Chrome atau Brave, biasanya http://127.0.0.1:5173.
 
 ```bash
 npm run build
