@@ -5,7 +5,7 @@ import SearchBar from '../components/SearchBar.jsx';
 import ProductForm from '../components/ProductForm.jsx';
 import DeleteDialog from '../components/DeleteDialog.jsx';
 
-export default function ProductsPage({ products, onAdd, onUpdate, onDelete }) {
+export default function ProductsPage({ products, onAdd, onUpdate, onDelete, viewMode }) {
 
   const [query, setQuery] = useState('');
   const [dialog, setDialog] = useState(null);
@@ -53,6 +53,7 @@ export default function ProductsPage({ products, onAdd, onUpdate, onDelete }) {
 
   return (
     <div>
+      <title>Produk | Manajemen Produk</title>
       <header className="page-header">
         <div>
           <h1>Manajemen Produk</h1>
@@ -64,7 +65,7 @@ export default function ProductsPage({ products, onAdd, onUpdate, onDelete }) {
       </header>
       <SearchBar query={query} onQueryChange={setQuery} total={products.length} />
       {filteredProducts.length > 0 ? (
-        <section className="product-grid" aria-label="Daftar produk">
+        <section className={viewMode === 'list' ? 'product-list' : 'product-grid'} aria-label="Daftar produk" data-view={viewMode}>
           {filteredProducts.map((product) => (
             <ProductCard key={product.id} product={product}
               onEdit={(selected) => openDialog('edit', selected)}
