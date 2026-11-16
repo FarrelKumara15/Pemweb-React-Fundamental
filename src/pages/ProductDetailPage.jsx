@@ -11,7 +11,7 @@ export default function ProductDetailPage({ products }) {
 
   return (
     <>
-      <title>{product.name} | Manajemen Produk</title>
+      <title>{`${product.name} | Manajemen Produk`}</title>
       <Link className="mb-8 inline-flex min-h-10 items-center gap-2 font-semibold text-brand underline-offset-4 hover:underline" to="/products">← Kembali ke produk</Link>
       <header className="mb-8">
         <p className="mb-3 text-xs font-bold tracking-widest text-brand uppercase">Detail produk</p>
