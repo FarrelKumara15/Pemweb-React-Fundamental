@@ -53,12 +53,3 @@ Laporan HTML tersedia lokal di `playwright-report/index.html` setelah pengujian.
 ### Konfirmasi hapus
 
 ![Dialog hapus produk](screenshots/desktop-hapus.png)
-
-## Screenshot ponsel
-
-- [Halaman utama](screenshots/mobile-daftar.png)
-- [Tambah produk](screenshots/mobile-tambah.png)
-- [Edit produk](screenshots/mobile-edit.png)
-- [Konfirmasi hapus](screenshots/mobile-hapus.png)
-
-Data berada dalam state React dan tidak persisten setelah reload. Pengujian tidak mencakup integrasi backend atau browser Firefox/Safari.
