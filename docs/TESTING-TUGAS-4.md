@@ -1,25 +1,13 @@
 # Bukti Pengujian Tugas 4
 
-Pengujian pada **16 November 2026**, menggunakan Google Chrome headless, Playwright, dan Node.js v24.12.0. Semua skenario dijalankan terhadap **build produksi** melalui Vite preview, bukan mockup.
-
-- Desktop: viewport 1440 × 1000.
-- Ponsel: emulasi Pixel 7, viewport 412 × 839. Bukan perangkat fisik.
-- Breakpoint tambahan: 390, 820, dan 1280 piksel.
-- Hasil: **38/38 pengujian lulus** (19 skenario × 2 viewport).
-- Build produksi: **berhasil**.
-
 ## Cara menjalankan
-
-Google Chrome harus sudah terpasang.
 
 ```bash
 npm ci
 npm test -- --workers=2
 ```
 
-Konfigurasi Playwright menjalankan `npm run build` dan `npm run preview -- --port 4175 --strictPort` secara otomatis. Laporan HTML tersedia di `playwright-report/index.html`. Screenshot bukti berada di `docs/screenshots/tugas-4/`.
-
-## Skenario dan hasil aktual
+## Skenario dan hasil 
 
 | Skenario | Hasil yang Diharapkan | Hasil Aktual |
 |---|---|---|
@@ -43,10 +31,6 @@ Konfigurasi Playwright menjalankan `npm run build` dan `npm run preview -- --por
 | Edit, cari, dan hapus dalam mode List | CRUD dan pencarian tetap berfungsi tanpa mengubah mode | Sesuai |
 | Screenshot semua halaman dan dialog | Tidak ada error JavaScript pada alur screenshot; tampilan terbaca | Sesuai |
 
-Jumlah baris tabel merangkum cakupan pengujian; pemetaan skenario otomatis dapat dilihat di `tests/products.spec.js` dan `tests/routing.spec.js`.
-
-## Screenshot desktop
-
 ### Daftar produk
 
 ![Daftar produk](screenshots/tugas-4/desktop-daftar.png)
@@ -68,13 +52,3 @@ Jumlah baris tabel merangkum cakupan pengujian; pemetaan skenario otomatis dapat
 ![Daftar dalam mode List](screenshots/tugas-4/desktop-list.png)
 
 Bukti tambahan: [Tambah](screenshots/tugas-4/desktop-tambah.png), [Edit](screenshots/tugas-4/desktop-edit.png), [Hapus](screenshots/tugas-4/desktop-hapus.png), dan [ID produk tidak tersedia](screenshots/tugas-4/desktop-produk-tidak-ada.png).
-
-## Screenshot ponsel
-
-[Daftar](screenshots/tugas-4/mobile-daftar.png), [Detail](screenshots/tugas-4/mobile-detail.png), [404](screenshots/tugas-4/mobile-404.png), [Settings](screenshots/tugas-4/mobile-settings.png), [List](screenshots/tugas-4/mobile-list.png), [Tambah](screenshots/tugas-4/mobile-tambah.png), [Edit](screenshots/tugas-4/mobile-edit.png), [Hapus](screenshots/tugas-4/mobile-hapus.png), dan [ID tidak tersedia](screenshots/tugas-4/mobile-produk-tidak-ada.png).
-
-Pemeriksaan visual dilakukan pada daftar desktop, detail ponsel, 404 desktop, Settings desktop/ponsel, dan dialog tambah ponsel.
-
-## Batas pengujian
-
-Data dan pilihan tampilan masih berupa state React yang kembali ke nilai awal setelah reload. Tidak ada integrasi backend. Pengujian browser menggunakan Chrome; tidak mencakup Firefox/Safari. Tampilan 404 di SPA tidak menjamin respons HTTP 404 dari hosting. Hosting produksi perlu fallback ke `index.html` untuk akses langsung ke route aplikasi.
