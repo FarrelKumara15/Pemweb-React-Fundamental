@@ -1,13 +1,5 @@
 # Bukti Pengujian Tugas 3
 
-Pengujian lokal pada 14 November 2026 menggunakan Node.js v24.12.0, Playwright, dan Microsoft Edge berbasis Chromium dalam mode headless.
-
-- Desktop: viewport 1440 × 1000.
-- Ponsel: emulasi Pixel 7, viewport 412 × 839. Ini emulasi browser, bukan pengujian pada perangkat fisik.
-- Hasil suite: **20 pengujian lulus** (10 skenario × 2 viewport).
-- Build produksi: **berhasil** dengan `npm run build`.
-- Pemeriksaan visual: halaman utama desktop dan modal tambah pada ponsel terbaca dan tidak terpotong.
-
 ## Skenario
 
 | Skenario | Hasil yang Diharapkan | Hasil Aktual |
@@ -31,12 +23,6 @@ $env:PLAYWRIGHT_CHANNEL = 'msedge'
 npm test -- --workers=2
 npm run build
 ```
-
-Untuk Chromium bawaan Playwright, jalankan `npx playwright install chromium` lalu `npm test` tanpa variabel `PLAYWRIGHT_CHANNEL`.
-
-Laporan HTML tersedia lokal di `playwright-report/index.html` setelah pengujian. Folder laporan dan dependensi tidak dimasukkan ke Git. Screenshot bukti disimpan dalam repository dan diperbarui saat pengujian screenshot dijalankan.
-
-## Screenshot desktop
 
 ### Halaman utama
 
