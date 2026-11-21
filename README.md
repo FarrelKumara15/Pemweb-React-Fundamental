@@ -1,7 +1,5 @@
 # Manajemen Produk — Tugas 4 React Router & Tailwind CSS
 
-Pengembangan aplikasi CRUD dari Tugas 3 menggunakan React Router 7 dan Tailwind CSS 4. Halaman daftar, detail produk, Settings, dan 404 berbagi layout serta state produk yang sama.
-
 ## Menjalankan aplikasi
 
 ```bash
@@ -13,8 +11,6 @@ npm run dev
 npm run build
 npm run preview
 ```
-
-`build` menghasilkan versi produksi di folder `dist`. `preview` menjalankan hasil build secara lokal.
 
 ## Halaman
 
@@ -42,8 +38,6 @@ ID yang tidak tersedia, misalnya `/products/999`, juga menampilkan 404 dengan pe
 - Validasi nama wajib diisi dan harga berupa bilangan bulat positif dalam batas angka aman JavaScript.
 - Navigasi dialog dengan Tab, Shift+Tab, dan Escape serta pengembalian fokus setelah ditutup.
 
-Data produk dan pilihan Grid/List disimpan dalam state `App`, di atas `Routes`, sehingga tetap tersedia saat berpindah halaman. Reload mengembalikan lima produk awal dan tampilan Grid. Aplikasi belum terhubung ke API, database, atau localStorage.
-
 ## Penerapan materi React
 
 | Materi | Implementasi |
@@ -57,8 +51,6 @@ Data produk dan pilihan Grid/List disimpan dalam state `App`, di atas `Routes`, 
 | Pembaruan immutable | Spread, `map`, dan `filter` |
 | React Router | `BrowserRouter`, nested `Routes`/`Route`, `Outlet`, `Link`, `NavLink`, `Navigate`, dan `useParams` |
 | Tailwind CSS | Plugin `@tailwindcss/vite`, utility JSX, breakpoint `md:`/`lg:`, dan variasi `Button` |
-
-`useRef` menyimpan ID berikutnya dan referensi elemen. `useEffect` mengatur siklus dialog native, fokus keyboard, dan posisi scroll saat halaman berubah.
 
 ## Struktur
 
@@ -99,8 +91,6 @@ Pengujian otomatis menggunakan Google Chrome yang sudah terpasang.
 ```bash
 npm test -- --workers=2
 ```
-
-Playwright membangun aplikasi dan menjalankan preview produksi otomatis di port 4175. Sebanyak 19 skenario diuji pada desktop dan emulasi ponsel, total **38 pengujian**. Pengujian mencakup CRUD, routing, reload URL detail, Back/Forward, 404, Settings, serta breakpoint Tailwind.
 
 Lihat [hasil dan screenshot Tugas 4](docs/TESTING-TUGAS-4.md). Bukti Tugas 3 tetap tersimpan di [dokumentasi sebelumnya](docs/TESTING.md).
 
